@@ -20,6 +20,13 @@ export const Pantalla1Screen = ({navigation}:Props) => {
         nombre: 'Gabriel',
         correo: 'gaby@gmail.com'
     }
+
+    const persona2: Persona={
+        id: 2,
+        nombre: 'Wilmer',
+        correo: 'wilmer@gmail.com'
+    }
+
     return (
         <View style={styles.globalMargin}>
             <Text style={styles.title}>Pantalla 1</Text>
@@ -31,11 +38,12 @@ export const Pantalla1Screen = ({navigation}:Props) => {
                 title="Persona Screen"
                 onPress={()=>navigation.navigate('Pantalla Screen')}
             /> */}
-            <Text>Navegacion con parámetros</Text>
-            <TouchableOpacity
-                onPress={()=>navigation.navigate('Pantalla Screen', persona1)}
-                >
+            <Text style={styles.title}>Navegacion con parámetros</Text>
+            <TouchableOpacity onPress={()=>navigation.navigate('Pantalla Gabriel', persona1)}>
                 <Text>Gabriel</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={()=>navigation.navigate('Pantalla Wilmer', persona2)}>
+                <Text>Wilmer</Text>
             </TouchableOpacity>
         </View>
     )
